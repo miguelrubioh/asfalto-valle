@@ -1,0 +1,199 @@
+/* --- SECCIÓN PROYECTOS --- */
+.proyectos-section {
+    background-color: #f4f6f9; /* Un gris-azulado muy claro para fondo */
+    padding: 80px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header de Sección */
+.proyectos-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #03194b; /* Tu azul corporativo */
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+.section-subtitle {
+    font-size: 16px;
+    color: #9d9d9d; /* Gris corporativo */
+    font-weight: 500;
+}
+
+/* --- CONTENEDOR GENERAL --- */
+.proyectos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px; 
+}
+
+/* --- FILA DE PROYECTO (ROW) --- */
+.proyecto-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: #ffffff; /* Tarjeta blanca impecable */
+    padding: 30px;
+    border-radius: 20px;
+    /* Sombra elegante teñida ligeramente con tu azul */
+    box-shadow: 0 10px 35px rgba(3, 25, 75, 0.06); 
+    border: 1px solid #eaeaea; /* Borde sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(3, 25, 75, 0.12);
+}
+
+/* TRUCO: Alternar orden (Zig-Zag) */
+.proyecto-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* --- INFORMACIÓN DEL PROYECTO (Texto) --- */
+.proyecto-info {
+    flex: 1; 
+}
+
+/* Etiqueta estilo 'Pill' como en la sección de experiencia */
+.info-tag {
+    color: #005a2c !important; /* Verde corporativo con important por si acaso */
+    background-color: rgba(0, 90, 44, 0.1); /* Fondo verde translúcido */
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.info-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #03194b; /* Azul corporativo */
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.info-desc {
+    color: #555; /* Gris oscuro para buena legibilidad */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Detalles con iconos */
+.info-details {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eaeaea;
+}
+
+.info-details li {
+    font-size: 14px;
+    font-weight: 600;
+    color: #03194b; /* Azul corporativo para los datos */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.info-details i {
+    color: #005a2c; /* Iconos en verde corporativo */
+    font-size: 16px;
+}
+
+/* --- MOSAICO DE GALERÍA (Grid de 3 fotos) --- */
+.proyecto-gallery {
+    flex: 1.2; 
+    height: 400px;
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 15px;
+}
+
+/* Estilo común de las imagenes */
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    /* Sombra interna para darle profundidad a las fotos */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Zoom más suave */
+}
+
+/* Efecto Zoom al pasar el mouse por la foto individual */
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* UBICACIÓN DE LAS FOTOS EN EL GRID */
+.main-img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3; 
+}
+
+/* --- BOTÓN DE LLAMADA --- */
+.btn-container {
+    text-align: center;
+    margin-top: 70px; /* Un poco más de aire antes del botón */
+}
+
+.btn-llamanos {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #005a2c; /* Verde corporativo como CTA */
+    color: #ffffff;
+    padding: 16px 45px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 90, 44, 0.25); /* Sombra verde */
+    transition: all 0.3s ease;
+}
+
+.btn-llamanos:hover {
+    transform: translateY(-5px);
+    background-color: #03194b; /* Cambia a azul corporativo al hacer hover */
+    box-shadow: 0 15px 35px rgba(3, 25, 75, 0.3); /* Sombra azul */
+}
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media screen and (max-width: 992px) {
+    .proyecto-row {
+        flex-direction: column !important; 
+        gap: 30px;
+        padding: 25px 20px;
+    }
+
+    .proyecto-gallery {
+        width: 100%;
+        height: 350px; 
+    }
+    
+    .info-title {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+}

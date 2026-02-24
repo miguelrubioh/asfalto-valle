@@ -1,0 +1,157 @@
+/* --- SECCIÓN EXPERIENCIA (Fondo Azul) --- */
+.experiencia-section {
+    background-color: #03194b; /* Tu azul corporativo como base sólida */
+    padding: 80px 0; 
+    font-family: 'Poppins', sans-serif; 
+    overflow: hidden; 
+}
+
+/* Cabecera */
+.experiencia-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.experiencia-title {
+    font-size: 36px; 
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.experiencia-subtitle {
+    font-size: 16px;
+    color: #9d9d9d; /* Tu gris para el texto secundario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.experiencia-subtitle i {
+    color: #005a2c; /* Flecha en verde corporativo */
+    animation: slideRight 1.5s ease-in-out infinite;
+}
+
+@keyframes slideRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
+
+/* --- CARRUSEL --- */
+.experiencia-container {
+    display: flex;
+    gap: 25px; 
+    overflow-x: auto; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 20px 40px 60px 40px; /* Padding extra abajo para la sombra */
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+}
+.experiencia-container::-webkit-scrollbar {
+    display: none; 
+}
+
+/* --- TARJETAS LIMPIAS (BLANCAS) --- */
+.experiencia-card {
+    flex: 0 0 auto; 
+    width: 320px;
+    background-color: #ffffff; /* Tarjeta blanca para máximo contraste */
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experiencia-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* --- ZONA DE IMAGEN SUPERIOR (El arreglo clave) --- */
+
+/* Estilo base para TODAS las áreas superiores (imágenes o iconos) */
+.card-image {
+    width: 100%;
+    height: 220px; /* Altura fija idéntica para todas */
+    /* Definimos un fondo gris muy suave y limpio para TODAS las tarjetas */
+    background-color: #f4f6f9; 
+}
+
+/* TRUCO PARA LAS ETIQUETAS <img>: Ocultar el placeholder feo */
+img.card-image {
+    object-fit: cover;
+    /* ESTO ES LA CLAVE: Movemos la imagen del placeholder lejísimos del marco visual.
+       Al hacer esto, solo se ve el 'background-color' que definimos arriba. */
+    object-position: -9999px -9999px; 
+}
+
+/* Estilos específicos para las tarjetas que tienen iconos (.no-image) */
+.card-image.no-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ya heredó el background-color #f4f6f9 de la regla base .card-image */
+}
+
+.card-image.no-image i {
+    font-size: 70px;
+    color: #9d9d9d; /* El icono en tu gris corporativo */
+    transition: color 0.3s ease;
+}
+
+.experiencia-card:hover .card-image.no-image i {
+    color: #03194b; /* Al hacer hover, el icono se vuelve azul */
+}
+
+/* --- ZONA DE TEXTO INFERIOR --- */
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; /* Asegura que todas las tarjetas tengan la misma altura final */
+}
+
+/* Etiqueta Verde Sutil */
+.card-category {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #005a2c !important; /* Tu verde */
+    background-color: rgba(0, 90, 44, 0.1); /* Fondo verde semi-transparente */
+    padding: 6px 12px;
+    border-radius: 20px; /* Pill shape */
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #03194b; /* Tu azul corporativo para el título */
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .experiencia-section { padding: 50px 0; }
+    .experiencia-title { font-size: 28px; }
+    .experiencia-container { padding: 20px; gap: 15px; }
+    .experiencia-card { width: 280px; }
+    /* Ajustamos la altura en móviles también */
+    .card-image { height: 180px; }
+}
+
+/* Cursor para arrastrar */
+.experiencia-container { cursor: grab; }
+.experiencia-container.active { cursor: grabbing; }

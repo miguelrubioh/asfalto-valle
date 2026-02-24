@@ -1,0 +1,263 @@
+/* --- SECCIÓN NOSOTROS (VERSIÓN CORPORATIVA LIMPIA) --- */
+.nosotros-section {
+    background-color: #ffffff; /* Fondo blanco impecable */
+    color: #333; /* Texto general oscuro para buena lectura */
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden; 
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor central */
+.nosotros-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- 1. INTRO (QUIENES SOMOS) --- */
+.nosotros-intro {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+/* Lado Texto */
+.intro-content {
+    flex: 1;
+}
+
+.intro-tag {
+    color: #005a2c; /* Verde corporativo */
+    background-color: rgba(0, 90, 44, 0.1); /* Fondo verde translúcido */
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.intro-title {
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #03194b; /* Azul corporativo para el título principal */
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.intro-desc {
+    color: #555; /* Gris intermedio para el párrafo */
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.intro-desc strong {
+    color: #03194b; /* Resaltamos el nombre de la empresa en azul */
+    font-weight: 700;
+}
+
+.intro-slogan {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    background: #f4f6f9; /* Fondo gris muy suave */
+    border-radius: 10px;
+    border-left: 4px solid #005a2c; /* Línea verde corporativa */
+}
+
+.intro-slogan i {
+    color: #005a2c; /* Icono verde */
+    font-size: 24px;
+}
+.intro-slogan span {
+    font-weight: 600;
+    font-size: 15px;
+    color: #03194b; /* Texto en azul */
+}
+
+/* Lado Imagen */
+.intro-image {
+    flex: 1;
+    position: relative;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 20px;
+    /* Sombra elegante y suave teñida de azul */
+    box-shadow: 0 20px 40px rgba(3, 25, 75, 0.1); 
+    object-fit: cover;
+}
+
+/* Badge flotante (30+ Años) */
+.img-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background-color: #03194b; /* Fondo azul corporativo para que resalte mucho */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px rgba(3, 25, 75, 0.2); /* Sombra azul */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.badge-number {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    color: #005a2c; /* El número en verde para que 'explote' sobre el azul */
+}
+
+.badge-text {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+/* --- 2. MISIÓN Y VISIÓN (GRID) --- */
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.mv-card {
+    background-color: #f4f6f9; /* Tarjetas en gris muy clarito para separarlas del fondo blanco */
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 3px solid transparent; 
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(3, 25, 75, 0.08);
+    border-bottom: 3px solid #005a2c; /* Línea verde abajo al pasar mouse */
+}
+
+.mv-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff; /* Círculo blanco para el icono */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.mv-icon i {
+    color: #005a2c; /* Icono verde */
+    font-size: 24px;
+}
+
+.mv-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #03194b; /* Azul corporativo */
+    font-weight: 700;
+}
+
+.mv-card p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* --- 3. CONFIANZA (BARRA DE VALORES) --- */
+.confianza-bar {
+    text-align: center;
+    border-top: 1px solid #eaeaea; /* Separador sutil */
+    padding-top: 60px;
+}
+
+.confianza-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #03194b; /* Azul corporativo */
+}
+
+.valores-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.valor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 160px;
+}
+
+.valor-item i {
+    font-size: 40px;
+    color: #005a2c; /* Iconos verdes */
+    margin-bottom: 10px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.valor-item:hover i {
+    transform: scale(1.15) translateY(-5px);
+}
+
+.valor-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #03194b; /* Azul corporativo */
+}
+
+.valor-item p {
+    font-size: 14px;
+    color: #9d9d9d; /* Gris corporativo */
+    font-weight: 500;
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 992px) {
+    .nosotros-intro {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .intro-image {
+        width: 100%;
+        padding-left: 15px; /* Espacio para que el badge no se corte */
+    }
+    
+    .img-badge {
+        left: 0px; 
+        bottom: -20px;
+    }
+
+    .mv-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .intro-title {
+        font-size: 34px;
+    }
+    
+    .valores-grid {
+        gap: 50px; /* Más espacio vertical entre iconos en móvil */
+    }
+}

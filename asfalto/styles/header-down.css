@@ -1,0 +1,115 @@
+/* --- BARRA INFERIOR (HEADER DOWN / TOPBAR) --- */
+
+.header-down {
+    /* Fondo azul corporativo sólido */
+    background-color: #03194b; 
+    color: #ffffff;
+    
+    /* Disposición flexible */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Espaciado */
+    padding: 12px 40px;
+    font-size: 13px;
+    /* Línea base verde corporativo, aporta un detalle sutil sin ser invasivo */
+    border-bottom: 3px solid #005a2c; 
+}
+
+/* --- LADO IZQUIERDO (Frase) --- */
+.hd-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.highlight-icon {
+    color: #005a2c; /* Icono del casco en verde corporativo */
+    font-size: 16px;
+}
+
+.hd-text strong {
+    color: #ffffff; /* Texto fuerte en blanco para destacar sobre el azul */
+    font-weight: 700;
+}
+
+/* --- LADO DERECHO (Links) --- */
+.hd-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hd-link {
+    text-decoration: none;
+    color: #9d9d9d; /* Gris corporativo para los enlaces inactivos */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.hd-link i {
+    color: #005a2c; /* Iconos de contacto en verde corporativo */
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto Hover en los links */
+.hd-link:hover {
+    color: #ffffff; /* El texto se ilumina en blanco */
+    transform: translateY(-2px); 
+}
+
+.hd-link:hover i {
+    color: #ffffff; /* El icono también se vuelve blanco para mayor impacto */
+}
+
+/* Animación sutil para el teléfono (Llamado a la acción) */
+.hd-link.phone:hover i {
+    animation: phone-shake 0.5s ease-in-out infinite;
+}
+
+.hd-divider {
+    color: #9d9d9d; /* Separador en gris corporativo */
+    opacity: 0.5; /* Un poco más suave */
+}
+
+/* --- ANIMACIÓN DEL TELÉFONO --- */
+@keyframes phone-shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* --- RESPONSIVE (MÓVIL Y TABLET) --- */
+@media screen and (max-width: 768px) {
+    .header-down {
+        flex-direction: column; 
+        gap: 10px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .hd-divider {
+        display: none; 
+    }
+
+    .hd-right {
+        flex-direction: column; 
+        gap: 8px;
+        width: 100%;
+    }
+
+    .hd-link {
+        justify-content: center;
+        width: 100%;
+        padding: 8px; /* Un poco más de área para tocar en móvil */
+        background: rgba(255, 255, 255, 0.08); /* Fondo ligeramente más visible */
+        border-radius: 6px;
+    }
+}

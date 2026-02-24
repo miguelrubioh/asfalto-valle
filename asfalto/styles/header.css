@@ -1,0 +1,322 @@
+/* --- ESTILOS GENERALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background-color: #f8f9fa; /* Fondo general de la página muy claro */
+    height: 100vh;
+}
+
+/* --- HEADER PRINCIPAL --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff; /* Header blanco y limpio */
+    border-bottom: 1px solid #eaeaea;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(3, 25, 75, 0.05); /* Sombra sutil usando tu azul */
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 101; 
+}
+
+.logo img {
+    max-width: 140px; /* Tamaño ajustable */
+    height: auto;
+}
+
+/* NAVEGACIÓN (Contenedor de lista + botón) */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+    padding: 10px 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #03194b; /* Tu azul corporativo para los enlaces */
+    font-weight: 600; /* Un poco más de peso para lectura */
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #005a2c; /* Tu verde corporativo al pasar el mouse */
+}
+
+.nav-link i {
+    font-size: 11px;
+    margin-top: 2px;
+    transition: transform 0.3s ease; /* Para animar la flechita después si quieres */
+}
+
+/* BOTÓN DERECHA (Contacto) */
+.btn-contacto {
+    background-color: #005a2c; /* Verde corporativo como CTA principal */
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 30px; /* Pill shape */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 90, 44, 0.2); /* Sombra verde sutil */
+}
+
+.btn-contacto i {
+    font-size: 12px;
+}
+
+.btn-contacto:hover {
+    background-color: #03194b; /* Cambia al azul corporativo en hover */
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(3, 25, 75, 0.3);
+    transform: translateY(-2px); /* Ligero efecto de elevación */
+}
+
+/* --- MENÚ DESPLEGABLE (DROPDOWN) --- */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    width: 280px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(3, 25, 75, 0.15); /* Sombra azulada */
+    border-radius: 12px;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-top: 3px solid #005a2c; /* Línea superior en tu verde */
+    z-index: 200;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #03194b; /* Azul corporativo */
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f4f6f9; /* Fondo gris muy claro en hover */
+}
+
+.item-icon {
+    width: 24px;
+    text-align: center;
+    color: #9d9d9d; /* Gris corporativo para iconos inactivos */
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.dropdown-item:hover .item-icon {
+    color: #005a2c; /* Icono verde en hover */
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #03194b; /* Azul corporativo */
+}
+
+.item-subtitle {
+    font-size: 11px;
+    color: #9d9d9d; /* Gris corporativo para el subtítulo */
+    font-weight: 600;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Flecha apuntando arriba del dropdown */
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 40px;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    transform: rotate(45deg);
+    border-top: 1px solid #eaeaea; 
+    border-left: 1px solid #eaeaea;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets y Móviles)
+   ========================================= */
+@media screen and (max-width: 992px) {
+
+    .main-header {
+        padding: 15px 20px; /* Menos padding lateral en móvil */
+    }
+
+    /* 1. Botón Hamburguesa Animado */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 200; 
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #03194b; /* Azul corporativo para la hamburguesa */
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+    }
+
+    /* Cuando el menú está activo (X) */
+    .menu-toggle.is-active .bar {
+        background-color: #ffffff; /* Se vuelve blanca sobre el fondo azul de la cortina */
+    }
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* 2. La "Cortina" (Menú Móvil) */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(3, 25, 75, 0.98); /* Fondo AZUL CORPORATIVO casi sólido */
+        backdrop-filter: blur(8px);
+        
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 150;
+    }
+
+    .navbar.active {
+        transform: translateY(0); 
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Más espacio entre items en móvil */
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Enlaces en la cortina */
+    .nav-link {
+        font-size: 24px; /* Letra grande para fácil tapeo */
+        color: #ffffff; /* Blanco sobre azul */
+        font-weight: 500;
+    }
+    
+    .nav-link:hover { 
+        color: #005a2c; /* Verde al tocar */
+    }
+
+    /* Botón de contacto en móvil */
+    .btn-contacto {
+        margin-top: 40px;
+        background-color: #005a2c; /* Verde corporativo */
+        color: #ffffff;
+        padding: 14px 35px;
+        font-size: 18px;
+        border-radius: 30px;
+    }
+
+    /* 3. Dropdowns en Móvil */
+    .dropdown {
+        position: static;
+        width: 100%; /* Ocupa todo el ancho disponible */
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 15px 0 0 0;
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+    
+    .dropdown::before { display: none; } 
+
+    .nav-item:hover .dropdown {
+        display: flex;
+    }
+
+    .dropdown-item {
+        color: #9d9d9d; /* Gris corporativo para items secundarios en móvil */
+        padding: 10px;
+        justify-content: center;
+    }
+    
+    .dropdown-item:hover {
+        background: transparent;
+        color: #ffffff; /* Blanco al tocar para resaltar */
+    }
+
+    .dropdown-item .item-icon, 
+    .dropdown-item .item-subtitle { 
+        display: none; /* Simplificamos para no saturar la pantalla móvil */
+    }
+    
+    .dropdown-item .item-title {
+        color: inherit;
+        font-weight: 400;
+        font-size: 18px;
+    }
+}
