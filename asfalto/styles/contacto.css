@@ -54,7 +54,7 @@
     border-radius: 20px;
 }
 
-.info-title {
+.info-title2 {
     font-size: 36px;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -265,4 +265,5 @@
         flex-direction: column; 
         gap: 0;
     }
+
 }
