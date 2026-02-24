@@ -176,6 +176,10 @@
     box-shadow: 0 15px 35px rgba(3, 25, 75, 0.3); /* Sombra azul */
 }
 
+h3.info-title{
+    color: #03194b !important;
+}
+
 /* --- RESPONSIVE (MÓVIL) --- */
 @media screen and (max-width: 992px) {
     .proyecto-row {
@@ -196,4 +200,5 @@
     .section-title {
         font-size: 32px;
     }
+
 }
